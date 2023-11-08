@@ -8,7 +8,7 @@
         </strong>
       </div>
       <ul class="d-flex justify-content-end align-items-start gap-4">
-        <li class="nav-item">
+        <li class="d-none d-md-block nav-item">
           <a class="btn btn-sm btn-light border fw-medium px-3 py-2 rounded-4" href="https://multividas.com/"
             target="_blank">
             Go to Multividas.com
