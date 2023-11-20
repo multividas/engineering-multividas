@@ -21,6 +21,6 @@ export default function (Vue, { router, head, isClient }) {
     href: 'https://res.cloudinary.com/db1e0b4ka/raw/upload/v1698339335/mv-scss/main.css'
   }, {
     rel: 'stylesheet',
-    href: 'https://res.cloudinary.com/db1e0b4ka/raw/upload/v1698337698/mv-scss/footer.css'
+    href: 'http://res.cloudinary.com/db1e0b4ka/raw/upload/v1700411908/mv-scss/footer.css'
   })
 }

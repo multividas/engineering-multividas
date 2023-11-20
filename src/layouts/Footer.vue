@@ -96,7 +96,7 @@
         <div class="col-md-12">
           <h5 class="social-icons-title mb-2 cp">Follow us</h5>
           <ul
-            class="list-inline social-icons d-flex justify-content-center align-items-center gap-3"
+            class="list-inline social-icons"
           >
             <li class="list-inline-item cp">
               <a
