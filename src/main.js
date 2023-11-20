@@ -15,7 +15,7 @@ export default function (Vue, { router, head, isClient }) {
 
   head.link.push({
     rel: 'shortcut icon',
-    href: 'https://static-assets.multividas.com/assets/images/icon/icon.svg'
+    href: 'https://developers.multividas.com/images/logo.svg'
   }, {
     rel: 'stylesheet',
     href: 'https://res.cloudinary.com/db1e0b4ka/raw/upload/v1698339335/mv-scss/main.css'
