@@ -2,7 +2,7 @@
   <div class="footer-wrapper shadow-t">
     <div class="container">
       <div class="row text-center">
-        <div class="col-6 col-xl-3 col-lg-3 col-md-3 my-sm-2">
+        <div class="col-6 col-xl-3 col-lg-3 col-md-3 mb-5 my-md-0">
           <h5 class="footer-section-title fw-bold mb-3 cp">Multividas</h5>
           <ul class="footer-links">
             <li>
@@ -27,7 +27,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-6 col-xl-3 col-lg-3 col-md-3 my-sm-2">
+        <div class="col-6 col-xl-3 col-lg-3 col-md-3 mb-5 my-md-0">
           <h5 class="footer-section-title fw-bold mb-3 cp">Contact us</h5>
           <ul class="footer-links">
             <li>
@@ -42,7 +42,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-6 col-xl-3 col-lg-3 col-md-3 my-sm-2">
+        <div class="col-6 col-xl-3 col-lg-3 col-md-3 mb-5 my-md-0">
           <h5 class="footer-section-title fw-bold mb-3 cp">Resources</h5>
           <ul class="footer-links">
             <li>
@@ -69,7 +69,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-6 col-xl-3 col-lg-3 col-md-3 my-sm-2">
+        <div class="col-6 col-xl-3 col-lg-3 col-md-3 mb-5 my-md-0">
           <h5 class="footer-section-title fw-bold mb-3 cp">Conditions</h5>
           <ul class="footer-links">
             <li>
