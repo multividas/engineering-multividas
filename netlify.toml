@@ -3,4 +3,4 @@
 
 [build]
   publish = "dist"
-  command = "gridsome build && touch dist/.nojekyll && touch dist/favicon.ico"
+  command = "gridsome build"
