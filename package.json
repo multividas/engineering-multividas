@@ -1,18 +1,26 @@
 {
-  "name": "engineering-multividas",
+  "name": "engineering.multividas",
   "private": true,
+  "version": "1.0.0",
+  "description": "Multividas.com is a social media and blogging platform where people can share their short texts and posts, leaving comments and have discussions on threads.",
+  "keywords": [
+    "multividas",
+    "multividas blogs",
+    "multividas threads",
+    "multividas api documentation"
+  ],
+  "author": "soulaimane yahya <contact@soulaimaneyahya.com> (https://soulaimaneyahya.com/)",
+  "license": "MIT",
   "scripts": {
-    "build": "gridsome build",
     "develop": "gridsome develop",
+    "build": "gridsome build",
     "explore": "gridsome explore"
   },
   "dependencies": {
     "gridsome": "^0.7.0"
   },
   "engines": {
-    "node": ">=16"
-  },
-  "devDependencies": {
-    "style-resources-loader": "^1.5.0"
+    "nvm": "18",
+    "node": "^18"
   }
 }

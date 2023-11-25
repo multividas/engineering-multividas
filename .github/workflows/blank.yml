@@ -1,23 +1,15 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Multividas Engineering blog
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +19,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Change this to the version of Node.js you need
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
@@ -36,4 +28,7 @@ jobs:
         run: npm install --global @gridsome/cli
 
       - name: Build static
-        run : gridsome build && touch dist/.nojekyll && touch dist/favicon.ico
+        run : |
+          gridsome build
+          touch dist/.nojekyll
+          touch dist/favicon.ico
