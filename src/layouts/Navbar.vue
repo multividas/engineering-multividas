@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm px-md-0 px-sm-3 py-md-2 py-sm-3">
     <div class="container-fluid md:row d-md-flex justify-content-between px-md-5">
       <div class="d-flex justify-content-start align-items-center gap-2">
-        <g-image alt="logo" src="~/assets/png/nav-logo.png" width="35" />
+        <g-image alt="multividas, multividas api documentation, multividas threads, multividas status, multividas help center, multividas developer, multividas about us, multividas ads, multividas engineering blog, multividas developers documentation, multividas embed threadsmultividas, multividas api documentation, multividas threads, multividas status, multividas help center, multividas developer, multividas about us, multividas ads, multividas engineering blog, multividas developers documentation, multividas embed threadsmultividas, multividas api documentation, multividas threads, multividas status, multividas help center, multividas developer, multividas about us, multividas ads, multividas engineering blog, multividas developers documentation, multividas embed threadsmultividas, multividas api documentation, multividas threads, multividas status, multividas help center, multividas developer, multividas about us, multividas ads, multividas engineering blog, multividas developers documentation, multividas" src="~/assets/png/nav-logo.png" width="35" />
         <strong>
           <g-link to="/" class="navbar-brand text-primary fw-bold fs-4">Engineering blog</g-link>
         </strong>
