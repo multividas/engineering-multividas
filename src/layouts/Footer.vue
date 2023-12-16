@@ -1,7 +1,7 @@
 <template>
-  <div class="footer-wrapper shadow-t">
+  <div class="footer-wrapper shadow-t bg-dark py-5">
     <div class="container">
-      <div class="row text-center">
+      <div class="row text-center text-white">
         <div class="col-6 col-xl-3 col-lg-3 col-md-3 mb-5 my-md-0">
           <h5 class="footer-section-title fw-bold mb-3 cp">Multividas</h5>
           <ul class="footer-links">
@@ -95,7 +95,7 @@
 
       <hr class="text-white" />
 
-      <div class="row text-center my-2">
+      <div class="row text-center text-white my-2">
         <div class="col-md-12">
           <h5 class="social-icons-title mb-2 cp">Follow us</h5>
           <ul
@@ -200,7 +200,7 @@
         </div>
       </div>
 
-      <div class="row text-center">
+      <div class="row text-center text-white">
         <div class="col-md-12">
           <p class="footer-copyright text-white">
             <span class="me-1">&copy;</span>
@@ -230,4 +230,12 @@
   }
 </static-query>
 
-<style scoped></style>
+<style>
+ul.footer-links > li > a, p.footer-copyright a, .list-inline.social-icons > .list-inline-item > a > svg {
+  color: white;
+}
+
+ul.footer-links > li {
+  margin-bottom: 8px;
+}
+</style>
