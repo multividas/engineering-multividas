@@ -9,7 +9,10 @@
     <main class="container px-4 py-2 my-4 py-md-5 my-md-2">
       <div class="card">
         <div class="card-body">
-          <p>
+          <p class="lg-lg mb-2">
+            Multividas is a 'microblogging' system that allows you to send and receive short posts called "threads".
+          </p>
+          <p class="lg-lg mb-2">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut
             repudiandae fuga quo tenetur deserunt ad culpa, odio eaque
             consectetur laudantium vero quia veniam provident at architecto
