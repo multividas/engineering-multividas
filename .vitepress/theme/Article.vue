@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Date from './Date.vue'
 import Author from './Author.vue'
+import Thumbnail from './Thumbnail.vue'
 import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import { data as posts } from './posts.data.js'
@@ -34,7 +35,11 @@ const prevPost = computed(() => posts[findCurrentIndex() + 1])
       style="grid-template-rows: auto 1fr">
       <Author />
       <div class="divide-y divide-gray-200 dark:divide-slate-200/5 xl:pb-0 xl:col-span-3 xl:row-span-2">
-        <Content class="prose dark:prose-invert max-w-none pt-10 pb-8" />
+        <div class="post-thumbnail" v-if="data.image">
+          <Thumbnail :src="data.image" />
+        </div>
+
+        <Content class="prose dark:prose-invert max-w-none pt-6 pb-8" />
       </div>
 
       <footer

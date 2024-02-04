@@ -38,12 +38,11 @@ export async function genFeed(config: SiteConfig) {
       author: [
         {
           name: frontmatter.author,
-          link: frontmatter.twitter
-            ? `https://twitter.com/${frontmatter.twitter}`
-            : undefined
+          link: frontmatter.twitter ? `https://twitter.com/${frontmatter.twitter}` : undefined
         }
       ],
-      date: frontmatter.date
+      date: frontmatter.date,
+      image: frontmatter.image,
     })
   }
 

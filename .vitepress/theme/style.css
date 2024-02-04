@@ -190,6 +190,10 @@ span.lang {
   content: '' !important;
 }
 
+.post-thumbnail {
+  margin: 25px auto;
+}
+
 @media (prefers-color-scheme: dark) {
   .prose
     :where(:not(pre) > code):not(
