@@ -1,0 +1,42 @@
+{
+  "name": "engineering-multividas.com",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "With Multividas.com you can share short texts and posts, leaving comments and have discussions on threads.",
+  "keywords": [
+    "multividas",
+    "multividas blogs",
+    "multividas threads"
+  ],
+  "authors": [
+    {
+      "name": "soulaimaneyahya",
+      "email": "contact@soulaimaneyahya.com"
+    }
+  ],
+  "scripts": {
+    "dev": "vitepress --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.16",
+    "feed": "^4.2.2",
+    "gray-matter": "^4.0.3",
+    "tailwindcss": "^3.4.1",
+    "vitepress": "^1.0.0-rc.41",
+    "vue": "^3.4.15"
+  },
+  "pnpm": {
+    "overrides": {
+      "@vitejs/plugin-vue": "5.0.0-beta.1"
+    }
+  },
+  "engines": {
+    "nvm": "20",
+    "node": "^20"
+  }
+}
