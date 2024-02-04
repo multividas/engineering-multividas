@@ -6,7 +6,7 @@ gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
 ---
 
-<img width="680" height="380" src="/src/thumbnails/multividas-javascript-clean-code.webp" alt="multividas-javascript-clean-code.webp">
+<img width="680" height="380" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ouElMbXZf-J_COdMXQjiVQ.jpeg" alt="multividas-javascript-clean-code.webp">
 
 In this article, we'll explore best practices for writing clean JavaScript code, aiming to improve coding styling and build better software.
 
