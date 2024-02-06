@@ -13,7 +13,7 @@ export async function genFeed(config: SiteConfig) {
     link: baseUrl,
     language: 'en',
     image: 'https://developers.multividas.com/images/logo.svg',
-    favicon: `${baseUrl}/favicon.ico`,
+    favicon: `https://developers.multividas.com/images/logo.svg`,
     copyright: 'Copyright © 2023-present Soulaimane Yahya and blog contributors'
   })
 
