@@ -1,6 +1,6 @@
 ---
 title: 'PHP Clean Code Best Practices'
-date: 2024-02-04
+date: 2024-02-06
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
