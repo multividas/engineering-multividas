@@ -4,7 +4,7 @@ date: 2024-02-06
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
-image: 'https://miro.medium.com/v2/resize:fit:720/format:webp/1*SN-f9tTESuMj-3jLIaWbbQ.png'
+image: 'https://i0.wp.com/theorphic.space/wp-content/uploads/2021/10/sombrero-galaxy.jpg'
 ---
 
 In this article, we'll explore best practices for writing clean PHP code, aiming to improve coding styling and build better software.
