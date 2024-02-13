@@ -1,6 +1,6 @@
 import path from 'path'
 import { Feed } from 'feed'
-import { writeFileSync } from 'fs'
+import { writeFileSync, mkdirSync } from 'fs';
 import { createContentLoader, type SiteConfig } from 'vitepress'
 
 const baseUrl = `https://engineering.multividas.com`
@@ -46,5 +46,21 @@ export async function genFeed(config: SiteConfig) {
     })
   }
 
-  writeFileSync(path.join(config.outDir, 'feed.rss'), feed.rss2())
+    // Ensure the existence of the 'public' directory
+    const publicDir = path.join(config.outDir!, 'public');
+    if (!exists(publicDir)) {
+      mkdirSync(publicDir, { recursive: true });
+    }
+
+    // Write the RSS feed to file
+    writeFileSync(path.join(publicDir, 'feed.rss'), feed.rss2());
+}
+
+// Helper function to check if a directory exists
+function exists(dir: string): boolean {
+  try {
+    return require('fs').statSync(dir).isDirectory();
+  } catch (error) {
+    return false;
+  }
 }
