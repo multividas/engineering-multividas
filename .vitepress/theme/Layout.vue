@@ -22,8 +22,7 @@ const { page, frontmatter } = useData()
             <span class="hidden sm:inline">GitHub </span>Source
           </a>
           <span class="mr-2 ml-2">·</span>
-          <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/feed.rss">
-            RSS<span class="hidden sm:inline"> Feed</span>
+          <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/feed.rss" download="feed.rss">RSS<span class="hidden sm:inline"> Feed</span>
           </a>
           <span class="mr-2 ml-2">·</span>
           <a class="hover:text-gray-700 dark:hover:text-gray-200" href="https://multividas.com/" target="_blank"
