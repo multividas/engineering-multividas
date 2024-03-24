@@ -120,7 +120,7 @@ if __name__ == "__main__":
     main()
 ```
 
-<img src="https://raw.githubusercontent.com/soulaimaneyahya/ml-decision-tree/main/imgs/decision_tree.png" alt="ml-desicion-tree" />
+<img src="https://raw.githubusercontent.com/soulaimaneyahya/ml-decision-tree/main/imgs/decision_tree.png" alt="ml-decision-tree" />
 
 ## Predict Values
 
