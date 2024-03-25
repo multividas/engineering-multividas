@@ -1,8 +1,9 @@
 ---
 title: 'Comparative Exploration of JSON and YAML formats'
-date: 2024-03-20
+date: 2024-03-25
 author: Chaimae CHAIRI
-image: file:///C:/Users/pc/Downloads/JSON%20&%20YAML.png
+garvatar: https://avatars.githubusercontent.com/u/123027484?s=96&v=4
+image: https://drive.google.com/file/d/1K0VU81iYNPF7ANnQhvG2r12ukAASX5bO/view?usp=sharing
 ---
 
 **Introduction:**
