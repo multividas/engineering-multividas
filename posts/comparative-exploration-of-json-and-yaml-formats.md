@@ -3,7 +3,7 @@ title: 'Comparative Exploration of JSON and YAML formats'
 date: 2024-03-25
 author: Chaimae CHAIRI
 gravatar: https://avatars.githubusercontent.com/u/123027484?v=4
-image: ../thumbnails/json&yaml.png
+image: https://raw.githubusercontent.com/multividas/engineering-multividas/main/thumbnails/json%26yaml.png
 ---
 
 In this article, we will explore the intricacies of JSON and YAML, including their syntax, data manipulation techniques, performance characteristics, and real-world use cases.
