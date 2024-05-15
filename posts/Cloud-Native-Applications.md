@@ -31,7 +31,7 @@ Cloud Native applications are built specifically to leverage the advantages of c
 
 ## Microservices Architecture:
 
-An application is broken down into a collection of small, independent services. Each service focuses on a specific business capability and can be developed, deployed, and scaled independently. This approach offers several benefits, such as enhanced flexibility, fault isolation, and the ability to adopt different technologies for each service. However, it also introduces challenges related to service discovery, inter-service communication, and data consistency.
+An application is broken down into a collection of small, independent services. Each service focuses on a specific business capability and can be developed, deployed, and scaled independently. This approach offers several benefits, such as enhanced flexibility, fault isolation, and the ability to adopt different technologies for each service. However, it also introduces challenges related to service discovery, inter-service communication and data consistency.
 
 - Exemple: 
   Twitter's microservices architecture enables independent development and scaling of features like timelines, notifications, and direct messages.
