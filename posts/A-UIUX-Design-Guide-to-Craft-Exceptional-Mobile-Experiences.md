@@ -89,7 +89,7 @@ Introducing the Core Principles of Winning Mobile UI/UX Design, we delve into so
 - **Usage**: It is perfect for creating high-fidelity UI designs and prototypes.
 - **Integration**: Works seamlessly with plugins and other design tools.
 
-### 2.*Figma
+### 2. Figma
 
 - **Features**: It features the following: Cloud-based with real-time collaboration.
 - **Usage**: It is ideal for team projects and remote collaboration.
