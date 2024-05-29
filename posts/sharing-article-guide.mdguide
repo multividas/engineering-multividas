@@ -3,15 +3,18 @@ Article Sharing Guide
 1. Writing the Excerpt
 
 2. Post Naming Conventions
-   - Use lowercase for post names.
+  - Use lowercase for post names.
 
 3. Branch Name Format
-   - Use uppercase: ARTICLE-X
+  - Use uppercase: ARTICLE-X
 
-4. Ensuring Valid URLs
-   - Provide a valid thumbnail URL.
-   - Ensure your Gravatar URL is correct.
+4. Pull Requests
+  - Include comments with your PR.
 
-5. Following the Outline Guidelines
-   - Structure your proposal according to our Outline Guidelines;
-   - https://github.com/multividas/engineering-multividas/wiki/Guidelines-for-Planning-Your-Next-Article-Proposal
+5. Ensuring Valid URLs
+  - Provide a valid thumbnail URL.
+  - Ensure your Gravatar URL is correct.
+
+6. Following the Outline Guidelines
+  - Structure your proposal according to our Outline Guidelines;
+  - https://github.com/multividas/engineering-multividas/wiki/Guidelines-for-Planning-Your-Next-Article-Proposal
