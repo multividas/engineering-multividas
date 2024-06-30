@@ -1,18 +1,17 @@
 {
   "name": "engineering-multividas.com",
-  "private": true,
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "license": "MIT",
   "description": "With engineering.multividas.com, you can write and publish technical articles.",
   "keywords": [
     "multividas",
-    "multividas blogs",
-    "multividas threads"
+    "multividas engineering"
   ],
   "authors": [
     {
-      "name": "soulaimaneyahya",
-      "email": "contact@soulaimaneyahya.com"
+      "name": "Multividas",
+      "email": "multividasdotcom@gmail.com"
     }
   ],
   "scripts": {
@@ -34,6 +33,14 @@
     "overrides": {
       "@vitejs/plugin-vue": "5.0.0-beta.1"
     }
+  },
+  "bugs": {
+    "url": "https://github.com/multividas/engineering-multividas/issues"
+  },
+  "homepage": "https://github.com/multividas/engineering-multividas",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/multividas/engineering-multividas.git"
   },
   "engines": {
     "nvm": "20",

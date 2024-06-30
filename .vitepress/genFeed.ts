@@ -14,7 +14,7 @@ export async function genFeed(config: SiteConfig) {
     language: 'en',
     image: 'https://developers.multividas.com/images/logo.svg',
     favicon: `https://developers.multividas.com/images/logo.svg`,
-    copyright: 'Copyright © 2023-present Soulaimane Yahya and blog contributors'
+    copyright: `Copyright © ${(new Date()).getFullYear()}-present Soulaimane Yahya`
   })
 
   const posts = await createContentLoader('posts/*.md', {
