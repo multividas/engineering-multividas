@@ -4,7 +4,7 @@ import { genFeed } from './genFeed.js'
 export default defineConfig({
   lang: 'en-US',
   title: 'Multividas Engineering blog',
-  description: 'Creative engineers and developers building a world where you can belong anywhere',
+  description: 'Creative engineers and developers building a world where you can belong anywhere, Multividas Engineering blog is a technical news resource for engineers interested in how we solve large-scale technical challenges at Multividas.',
   lastUpdated: true,
   cleanUrls: true,
   head: [
