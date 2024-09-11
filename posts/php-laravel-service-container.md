@@ -23,6 +23,16 @@ Laravel service container is a powerful tool that enables developers to manage d
 - Bind and Singleton Registrations
 - Conclusion
 
+## Laravel Service Container
+
+At its core, Laravel’s service container is a dependency injection (DI) container that manages the instantiation of objects and their dependencies. In simpler terms, the service container is a container that holds and manages all of the objects and services that your application needs to function.
+
+The service container is responsible for creating these objects and their dependencies, and then injecting them into your application’s code when they are needed.
+
+The service container in Laravel is implemented using a technique called inversion of control (IoC). This technique is a design pattern that allows the framework to control the flow of your application’s logic. Instead of your application code explicitly calling dependencies, the service container takes control of the process, creating and injecting dependencies as needed.
+
+- [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
+
 ## Conclusion
 
 Laravel Service Container is a powerful feature of the Laravel framework that provides a convenient way to manage dependencies and perform dependency injection. It allows us to bind and resolve classes and interfaces, specify dependencies with constructor injection, and easily switch out implementations without affecting the rest of the application.
