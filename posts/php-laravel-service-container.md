@@ -258,6 +258,39 @@ class ProductController extends Controller
 }
 ```
 
+In this expl, we will register `ImageManager::class` as a singleton in the Laravel service container. 
+
+```php
+/**
+* Register any application services.
+*/
+public function register(): void
+{
+  $this->app->singleton(ImageManager::class, function ($app) {
+    // Get the image driver from the configuration, defaulting to 'imagick' if not set
+    $driver = config('image.driver', 'imagick');
+
+    // If 'imagick' is the driver, return a new instance of ImageManager using ImagickDriver
+    return new ImageManager($driver);
+  });
+}
+```
+
+- This registers the `ImageManager` class as a singleton in the service container.
+- The singleton method ensures that only one instance of the `ImageManager` is created and shared across the application.
+
+Let's assume we have a controller that uses the ImageManager. You can resolve it directly from the service container, and because it was registered as a `singleton`, the same instance will be used throughout the entire application.
+
+```php
+class ImageController
+{
+  public function process()
+  {
+    $imageManager = Container::getInstance()->make(ImageManager::class);
+  }
+}
+```
+
 ## Conclusion
 
 Laravel Service Container is a powerful feature of the Laravel framework that provides a convenient way to manage dependencies and perform dependency injection. It allows us to bind and resolve classes and interfaces, specify dependencies with constructor injection, and easily switch out implementations without affecting the rest of the application.
