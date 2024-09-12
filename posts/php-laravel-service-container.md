@@ -29,7 +29,39 @@ At its core, Laravel’s service container is a dependency injection (DI) contai
 
 The service container is responsible for creating these objects and their dependencies, and then injecting them into your application’s code when they are needed.
 
-The service container in Laravel is implemented using a technique called inversion of control (IoC). This technique is a design pattern that allows the framework to control the flow of your application’s logic. Instead of your application code explicitly calling dependencies, the service container takes control of the process, creating and injecting dependencies as needed.
+The service container in Laravel is implemented using a technique called inversion of control (IoC). This technique is a design pattern that allows the framework to control the flow of your application's logic. Instead of your application code explicitly calling dependencies, the service container takes control of the process, creating and injecting dependencies as needed.
+
+In traditional programming, if a class or function needs another class to perform its task (a dependency), you would typically create an instance of that dependency manually within your code. For expl:
+
+```php
+class OrderController
+{
+  public function __construct()
+  {
+    // Explicitly calling dependency
+    $this->orderService = new OrderService();
+  }
+}
+```
+
+In this case, the OrderController is explicitly creating the OrderService instance. This tight coupling makes the code harder to maintain and test.
+
+With Inversion of Control (IoC), the Laravel Service Container takes over the responsibility of creating and injecting the dependencies. Instead of manually creating the OrderService, the container automatically provides it when needed:
+
+```php
+class OrderController
+{
+  public function __construct(OrderService $orderService)
+  {
+    // Dependency is injected
+    $this->orderService = $orderService;
+  }
+}
+```
+
+::: warning
+Dependency refers to the instance of OrderService
+:::
 
 - [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
 
