@@ -136,7 +136,7 @@ In this example, we inject our UserService into our UserController using constru
 
 ## How to Register a Class Service and Resolve it
 
-Here is an expl of how to register a service named `ProductService` with the Laravel service container:
+Here is an expl of how to register a service named `ProductService` with the Laravel service container using `app()` helper method:
 
 ```php
 use App\Services\ProductService;
@@ -209,11 +209,11 @@ use App\Services\ProductService;
 $productService = Container::getInstance()->make(ProductService::class);
 ```
 
-In this example, we are manually resolving an instance of the ProductService class from the service container using the resolve method of the app() function.
+In this example, we are manually resolving an instance of the ProductService class from the service container using `Container::getInstance()->make()`.
 
 ## Bind and Singleton Registrations
 
-The ProductService is expl of a class that can be registered with the Laravel service container using either the bind or singleton methods. Here's an example of how to do this:
+The ProductService is expl of a class that can be registered with the Laravel service container using either the bind or singleton methods. Here's an example of how to do this using `app()` helper method:
 
 ```php
 use App\Services\ProductService;
