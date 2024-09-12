@@ -65,6 +65,47 @@ Dependency refers to the instance of OrderService
 
 - [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
 
+## Bind and Singleton Registrations
+
+The ProductService is expl of a class that can be registered with the Laravel service container using either the bind or singleton methods. Here's an example of how to do this:
+
+```php
+<?php
+
+use App\Services\ProductService;
+
+// Register the ProductService using the bind method
+app()->bind(ProductService::class, function() {
+  return new ProductService(rand(1, 100));
+});
+
+// Register the ProductService using the singleton method
+app()->singleton(ProductService::class, function() {
+  return new ProductService(rand(1, 100));
+});
+```
+
+On the other hand, the singleton method registers the ProductService as a singleton instance, which means that only one instance of the class is created and shared throughout the entire application. **This can be useful when we want to ensure that all instances of the class share the same state or dependencies.**
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\ProductService;
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+  public function index(Request $request)
+  {
+    // Resolve the ProductService
+    $productService = app(ProductService::class);
+    echo "Random number generated is {$productService->getRandomNumber()}<br>";
+  }
+}
+```
+
 ## Conclusion
 
 Laravel Service Container is a powerful feature of the Laravel framework that provides a convenient way to manage dependencies and perform dependency injection. It allows us to bind and resolve classes and interfaces, specify dependencies with constructor injection, and easily switch out implementations without affecting the rest of the application.
