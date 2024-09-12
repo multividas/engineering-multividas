@@ -24,7 +24,7 @@ Here's a brief overview of how it works:
 
 - **Private Constructor:** The class has a private constructor to prevent external instantiation.
 - **Static Instance:** A static instance of the class is created and used to store the single instance.
-- **Public Method:** A public static method (often called getInstance()) provides access to the instance. If the instance doesn't exist, it's created; otherwise, the existing instance is returned.
+- **Public Method:** A public static method (often called `getInstance()`) provides access to the instance. If the instance doesn't exist, it's created; otherwise, the existing instance is returned.
 
 ```php
 class MultiChatContainer
@@ -58,6 +58,10 @@ In this example, `getInstance()` ensures that only one instance of the `Singleto
 **Private Constructor (__construct):** Prevents direct instantiation of the class.
 
 **Private Clone (__clone):** Prevents cloning of the class instance.
+
+**static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
+
+**self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
 
 :::info
 Any state you add in your singleton becomes part of "global state" of your application
