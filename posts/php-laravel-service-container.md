@@ -92,7 +92,7 @@ public function register()
 }
 ```
 
-In this example, we define a singleton service called UserService that depends on the Hasher interface. The Hasher interface is injected using the make() method, which retrieves it from the service container. We then use the returned Hasher instance to instantiate our UserService.
+In this expl, we define a singleton service called UserService that depends on the Hasher interface. The Hasher interface is injected using the make() method, which retrieves it from the service container. We then use the returned Hasher instance to instantiate our UserService.
 
 ### Step 2: Register the Service Provider
 
@@ -132,7 +132,7 @@ class UserController extends Controller
 }
 ```
 
-In this example, we inject our UserService into our UserController using constructor injection. We then use the authenticate() method of our UserService to authenticate a user based on their email and password.
+In this expl, we inject our UserService into our UserController using constructor injection. We then use the authenticate() method of our UserService to authenticate a user based on their email and password.
 
 ## How to Register a Class Service and Resolve it
 
@@ -180,7 +180,7 @@ class ProductController extends Controller
 }
 ```
 
-In this example, we are using constructor injection to inject an instance of the ProductService class into the ProductController. Laravel will automatically resolve the ProductService class from the service container and inject it into the constructor.
+In this expl, we are using constructor injection to inject an instance of the ProductService class into the ProductController. Laravel will automatically resolve the ProductService class from the service container and inject it into the constructor.
 
 2- Method Injection:
 
@@ -198,9 +198,21 @@ class ProductController extends Controller
 }
 ```
 
-In this example, we are using method injection to inject an instance of the ProductService class into the index method of the ProductController. Laravel will automatically resolve the ProductService class from the service container and inject it into the method.
+In this expl, we are using method injection to inject an instance of the ProductService class into the index method of the ProductController. Laravel will automatically resolve the ProductService class from the service container and inject it into the method.
 
-3- Using the resolve method:
+3- Resolving an instance:
+
+In this expl, we are manually resolving an instance of the `ProductService::class` from the service container
+
+Using `resolve()` method:
+
+```php
+use App\Services\ProductService;
+
+$productService = app()->resolve(ProductService::class);
+```
+
+Using `Container::getInstance()->make()`:
 
 ```php
 use Illuminate\Container\Container;
@@ -208,8 +220,6 @@ use App\Services\ProductService;
 
 $productService = Container::getInstance()->make(ProductService::class);
 ```
-
-In this example, we are manually resolving an instance of the ProductService class from the service container using `Container::getInstance()->make()`.
 
 ## Bind and Singleton Registrations
 
