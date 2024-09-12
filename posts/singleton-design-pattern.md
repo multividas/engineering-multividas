@@ -14,27 +14,26 @@ In this article, we’ll take a deep dive into Singleton design pattern, explori
 ### Table Of Contents
 
 - Singleton design pattern
+- Global Access Point
 - Conclusion
 
 # Singleton design pattern
 
 The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance. It's useful when you need a single, shared resource across the application, such as a configuration manager or a database connection.
 
-Here's a brief overview of how it works:
-
-- **Private Constructor:** The class has a private constructor to prevent external instantiation.
-- **Static Instance:** A static instance of the class is created and used to store the single instance.
-- **Public Method:** A public static method (often called `getInstance()`) provides access to the instance. If the instance doesn't exist, it's created; otherwise, the existing instance is returned.
-
 ```php
 class MultiChatContainer
 {
-	private static $instance = null;
-    
-	private function __construct() {
-	}
+  private static $instance = null;
 
-  private function __clone() {
+  // Private constructor to prevent direct instantiation
+  private function __construct()
+  {
+  }
+
+  // Private __clone to prevent cloning
+  private function __clone()
+  {
   }
     
   /**
@@ -51,21 +50,27 @@ class MultiChatContainer
     return static::$instance;
   }
 }
+
+$app = MultiChatContainer::getInstance();
 ```
 
 In this example, `getInstance()` ensures that only one instance of the `Singleton` class exists throughout the application.
 
-**Private Constructor (__construct):** Prevents direct instantiation of the class.
+- **Private Constructor (__construct):** Prevents direct instantiation of the class.
+- **Private Clone (__clone):** Prevents cloning of the class instance.
+- **static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
+- **self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
 
-**Private Clone (__clone):** Prevents cloning of the class instance.
+<img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="structure-en" />
 
-**static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
+## Global Access Point
 
-**self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
+A Singleton provides a `global access point` to the instance. The class typically has a static method (often getInstance()) that returns the unique instance, allowing different parts of the application to access the same object.
 
-:::info
-Any state you add in your singleton becomes part of "global state" of your application
-:::
+## Additional Resources
+
+- [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
+- [Laravel service container:](https://engineering.multividas.com/posts/php-laravel-service-container)
 
 # Conclution
 
