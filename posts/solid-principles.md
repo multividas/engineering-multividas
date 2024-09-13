@@ -1,18 +1,18 @@
 ---
-title: 'SOLID Principles in Java with Examples'
+title: 'SOLID Principles'
 date: 2024-02-19
 author: Chaimae CHAIRI
-gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
+gravatar: https://avatars.githubusercontent.com/u/123027484?v=4
 image: 'https://miro.medium.com/max/1191/1*pzSz20jgRj0wqfS_8h0FLQ.png'
 ---
 
-In this article, we will delve into the SOLID principles and their application in Java code. We will explore how these principles can guide us in writing clean and maintainable code, ultimately leading to better software development practices. 
+In this article, we will delve into the SOLID principles. We will explore how these principles can guide us in writing clean and maintainable code, ultimately leading to better software development practices. 
 
 ---
 
-# SOLID Principles in Java
+# SOLID Principles
 
-SOLID is an acronym that represents a set of five design principles aimed at creating maintainable and scalable software. These principles, when applied, contribute to building robust and flexible object-oriented systems. Let's delve into each SOLID principle with clear examples in Java.
+SOLID is an acronym that represents a set of five design principles aimed at creating maintainable and scalable software. These principles, when applied, contribute to building robust and flexible object-oriented systems. Let's delve into each SOLID principle.
 
 ### Table Of Contents
 
@@ -330,7 +330,6 @@ public class NotificationService {
 
 ## Conclusion
 
-By understanding and applying the SOLID principles in Java, developers can write code that is more maintainable, extensible, and easier to test. The Single Responsibility Principle (SRP), Open-Closed Principle (OCP), Liskov Substitution Principle (LSP), Interface Segregation Principle (ISP), and Dependency Inversion Principle (DIP) provide guidelines for designing software that is flexible, modular, and resilient to change. 
+By understanding and applying the SOLID principles, developers can write code that is more maintainable, extensible, and easier to test. The Single Responsibility Principle (SRP), Open-Closed Principle (OCP), Liskov Substitution Principle (LSP), Interface Segregation Principle (ISP), and Dependency Inversion Principle (DIP) provide guidelines for designing software that is flexible, modular, and resilient to change. 
 
 Finally, SOLID principles are not strict rules but rather guidelines to strive for. They promote good software design practices and help create code that is easier to understand, maintain, and evolve over time.
-

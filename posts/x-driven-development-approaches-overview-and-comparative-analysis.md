@@ -2,7 +2,7 @@
 title: 'X-Driven Development Approaches: Overview and Comparative Analysis'
 date: 2024-06-28
 author: Chaimae CHAIRI
-gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
+gravatar: https://avatars.githubusercontent.com/u/123027484?v=4
 image: 'https://i1.wp.com/articleusa.com/wp-content/uploads/2021/02/software_development-blog-banner.png?resize=1536%2C922&ssl=1'
 ---
 
@@ -22,6 +22,7 @@ We mean by _X-Driven Development_ various software development methodologies tha
 - Agile Model Driven Development (AMDD)
 - Other X-Driven Methodologies
 - Comparative Analysis
+- Conclusion
 
 ## Test-Driven Development (TDD)
 
