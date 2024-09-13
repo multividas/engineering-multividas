@@ -15,11 +15,38 @@ In this article, we’ll take a deep dive into Singleton design pattern, explori
 
 - Singleton design pattern
 - Global Access Point
+- How to implement Singleton
+- Creating Singleton class
 - Conclusion
 
 # Singleton design pattern
 
 The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance. It's useful when you need a single, shared resource across the application, such as a configuration manager or a database connection.
+
+<img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="singleton-design-pattern" />
+
+## Global Access Point
+
+A Singleton provides a `global access point` to the instance. The class typically has a static method (often getInstance()) that returns the unique instance, allowing different parts of the application to access the same object.
+
+## How to implement Singleton
+
+Controlling instance creation.
+
+- **Private Constructor (__construct):** Prevents direct instantiation of the class.
+- **Private Clone (__clone):** Prevents cloning of the class instance.
+- **static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
+- **self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
+
+### Two options of implementing a singleton
+
+- Early initialization - Eager Singleton
+- Create singleton as soon as class is loaded
+
+- Lazy initialization - Lazy Singleton
+- Singleton is created when it is first required
+
+## Creating Singleton class
 
 ```php
 class MultiChatContainer
@@ -54,18 +81,7 @@ class MultiChatContainer
 $app = MultiChatContainer::getInstance();
 ```
 
-In this example, `getInstance()` ensures that only one instance of the `Singleton` class exists throughout the application.
-
-- **Private Constructor (__construct):** Prevents direct instantiation of the class.
-- **Private Clone (__clone):** Prevents cloning of the class instance.
-- **static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
-- **self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
-
-<img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="singleton-design-pattern" />
-
-## Global Access Point
-
-A Singleton provides a `global access point` to the instance. The class typically has a static method (often getInstance()) that returns the unique instance, allowing different parts of the application to access the same object.
+Giving access to a `Singleton` instance throughout the application, using public static method `getInstance()`.
 
 ## Additional Resources
 
