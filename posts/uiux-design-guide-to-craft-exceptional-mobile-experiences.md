@@ -1,5 +1,5 @@
 ---
-title: 'A UI/UX Design Guide to Craft Exceptional Mobile Experiences'
+title: 'UI/UX Design Guide to Craft Exceptional Mobile Experiences'
 date: 2024-05-28
 author: Chaimae CHAIRI
 gravatar: https://avatars.githubusercontent.com/u/123027484?v=4
@@ -15,7 +15,8 @@ As a user, nothing is more disappointing than an app that fails to deliver a smo
 
 - Core Principles of Winning Mobile UI/UX Design
 - Essential Design Patterns and Best Practices
-- TTop Tools for Designing and Prototyping
+- Top Tools for Designing and Prototyping
+- Conclusion
 
 ## Introduction
 
@@ -108,4 +109,5 @@ Introducing the Core Principles of Winning Mobile UI/UX Design, we delve into so
 - **Integration**:It Syncs with design tools like Sketch and Photoshop.
 
 ## Conclusion
+
 Mastering mobile UI/UX design is about more than just aesthetics; it’s about creating an experience that users love. By following these core principles, utilizing essential design patterns, and leveraging powerful tools, you can craft mobile apps that are not only functional but also highly engaging and user-friendly.
