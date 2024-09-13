@@ -61,7 +61,7 @@ In this example, `getInstance()` ensures that only one instance of the `Singleto
 - **static:** Uses late static binding, allowing subclasses to have their own instance when `getInstance()` is called on them.
 - **self:** Refers to the class where the method is defined, so it does not support subclassing in the same way.
 
-<img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="structure-en" />
+<img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="singleton-design-pattern" />
 
 ## Global Access Point
 
@@ -72,6 +72,6 @@ A Singleton provides a `global access point` to the instance. The class typicall
 - [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
 - [Laravel service container:](https://engineering.multividas.com/posts/php-laravel-service-container)
 
-# Conclution
+## Conclusion
 
 As software engineers, we use design patterns daily, this improves readability and lower maintenance cost. We use the singleton pattern to make sure we have the same instance when we resolve it.
