@@ -63,7 +63,7 @@ class OrderController
 Dependency refers to the instance of OrderService
 :::
 
-- [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
+- [Github Repo Explaining how PHP IoC works](https://github.com/soulaimaneyahya/php-ioc)
 
 ## How to Use Laravel Service Container?
 

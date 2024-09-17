@@ -85,8 +85,8 @@ Giving access to a `Singleton` instance throughout the application, using public
 
 ## Additional Resources
 
-- [Github Repo Explaining how PHP IoC works:](https://github.com/soulaimaneyahya/php-ioc)
-- [Laravel service container:](https://engineering.multividas.com/posts/php-laravel-service-container)
+- [Github Repo Explaining how PHP IoC works](https://github.com/soulaimaneyahya/php-ioc)
+- [Laravel service container](https://engineering.multividas.com/posts/php-laravel-service-container)
 
 ## Conclusion
 
