@@ -158,8 +158,8 @@ class PostsController
 
 ## Additional Resources
 
-- [Github Repo ApiResponer explained:](https://github.com/multividas/api-responser)
-- [Singleton design pattern:](https://engineering.multividas.com/posts/singleton-design-pattern)
+- [Github Repo ApiResponer explained](https://github.com/multividas/api-responser)
+- [Singleton design pattern](https://engineering.multividas.com/posts/singleton-design-pattern)
 
 ## Conclusion
 
