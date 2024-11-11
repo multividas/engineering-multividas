@@ -33,4 +33,4 @@ In this article, we’ll take a deep dive into design pattern, exploring its typ
 
 # Behavioral design pattern
 
-**Behavioral Design Pattern** focus on how objects interact and collaborate to fulfill their responsibilities. They define patterns for managing algorithms, relationships, and responsibilities between objects.
+**Behavioral Design Pattern** (objects behavior) focus on how objects interact and collaborate to fulfill their responsibilities. They define patterns for managing algorithms, relationships, and responsibilities between objects.
