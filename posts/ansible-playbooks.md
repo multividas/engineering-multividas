@@ -1,6 +1,6 @@
 ---
 title: 'Ansible playbooks'
-date: 2024-09-12
+date: 2024-11-15
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
@@ -19,7 +19,11 @@ In this article, we’ll explore in depth Ansible playbooks for automation
 
 # Ansible
 
-Ansible is an open-source, cli IT automation Tool written in Python, is used:
+Ansible is an open-source, cli IT automation Tool written in Python
+
+[github.com/ansible](https://github.com/ansible/ansible)
+
+Ansible is used:
 - configure systems, expls;
   - create dbadmin user on all servers
   - open some port on all db servers
@@ -100,6 +104,7 @@ Ansible playbooks are YAML files that define a series of tasks to be executed on
     tags: always
     apt:
       update_cache: yes
+    when: ansible_distribution == "Ubuntu"
 ```
 
 - `hosts: all`: Targets all hosts in the inventory.
@@ -110,8 +115,88 @@ Ansible playbooks are YAML files that define a series of tasks to be executed on
   - `apt:`: Uses the Ansible apt module to manage packages on Debian/Ubuntu systems.
       - `update_cache: yes`: Updates the package repository cache.
 
+- `update_cache`: yes: Refreshes package lists (like apt update).
+- `only_update`: true: Upgrades installed packages (like apt upgrade).
+
+- `when`: The task runs condition (e.g. the target system's OS is Ubuntu).
+
 Runs the command:
 
 ```sh
 ansible-playbook ansible-playbooks/update_cache.yaml
 ```
+
+### Tags
+
+`Tags` allow you to run specific parts of a playbook by categorizing tasks.
+
+```sh
+tasks:
+  - name: Install Nginx
+    apt:
+      name: nginx
+      state: present
+    tags: nginx
+
+  - name: Install MySQL
+    apt:
+      name: mysql-server
+      state: present
+    tags: mysql
+```
+
+#### CLI Commands:
+
+Run only Nginx tasks:
+
+```sh
+ansible-playbook playbook.yml --tags nginx
+```
+
+Skip MySQL tasks:
+
+```sh
+ansible-playbook playbook.yml --skip-tags mysql
+```
+
+### Ansible managing services
+
+Expl Playbook:
+
+```sh
+tasks:
+  - name: Install Nginx
+    apt:
+      name: nginx
+      state: present
+    tags: nginx
+    register: nginx_register
+
+  - name: Ensure Nginx is enabled and started
+    service:
+      name: nginx
+      state: started
+      enabled: true
+    register: nginx_service
+
+  - name: Deploy Nginx configuration
+    template:
+      src: nginx.conf.j2
+      dest: /etc/nginx/nginx.conf
+    register: nginx_conf_register
+
+  - name: Restart Nginx if changes detected
+    service:
+      name: nginx
+      state: restarted
+    when: nginx_conf_register.changed
+
+```
+
+Manage Service:
+- `state: started`: Ensures the service is running.
+- `enabled: true`: Ensures the service starts at boot. (like systemctl enabled nginx)
+
+- `template` copies a configuration file `(nginx.conf.j2)` to the target server.
+- Changes are detected and tracked via register: `nginx_conf_register`.
+- restart Nginx on `nginx_conf_register.changed`
