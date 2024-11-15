@@ -97,6 +97,7 @@ Ansible playbooks are YAML files that define a series of tasks to be executed on
   tasks:
 
   - name: update repository index
+    tags: always
     apt:
       update_cache: yes
 ```
@@ -105,6 +106,7 @@ Ansible playbooks are YAML files that define a series of tasks to be executed on
 - `tasks:`: Defines the tasks to be performed on the hosts.
 
   - `name: update repository index`: Describes the task.
+  - `tags: always`: This tag ensures the task is always executed, even if the playbook is run with specific tags.
   - `apt:`: Uses the Ansible apt module to manage packages on Debian/Ubuntu systems.
       - `update_cache: yes`: Updates the package repository cache.
 
