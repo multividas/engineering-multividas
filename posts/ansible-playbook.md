@@ -69,7 +69,7 @@ ssh -i ~/.ssh/id_ansible root@host1
 
 `ansible.cfg` file configures default settings for Ansible.
 
-```sh
+```ini
 [defaults]
 inventory = inventory.ini
 private_key_file = ~/.ssh/id_ansible
@@ -78,7 +78,7 @@ private_key_file = ~/.ssh/id_ansible
 
 The Ansible Inventory File `(inventory.ini)` lists target hosts and groups for Ansible to manage. It can include hostnames, IPs, and variables like usernames, ports, and SSH keys. It organizes systems for automation tasks.
 
-```sh
+```ini
 [webservers]
 host1 ansible_host=ns1.multividas.com ansible_user=root ansible_port=22
 host2 ansible_host=ns2.multividas.com ansible_user=root ansible_port=22
@@ -94,7 +94,7 @@ ansible all -m ping
 
 Ansible playbook are YAML files that define a series of tasks to be executed on our fleet.
 
-```sh
+```yaml
 ---
 
 - hosts: all
@@ -130,7 +130,7 @@ ansible-playbook ansible-playbook/update_cache.yaml
 
 `Tags` allow you to run specific parts of a playbook by categorizing tasks.
 
-```sh
+```yaml
 tasks:
   - name: Install Nginx
     apt:
@@ -163,7 +163,7 @@ ansible-playbook playbook.yml --skip-tags mysql
 
 Expl Playbook:
 
-```sh
+```yaml
 tasks:
   - name: Install Nginx
     apt:
@@ -205,7 +205,7 @@ Manage Service:
 
 Ansible template is used to manage configuration files by rendering them from Jinja2 templates, it's copies a file to a target machine after processing variables (e.g., from Ansible playbook or inventory).
 
-```sh
+```yaml
 tasks:
   - name: Deploy Nginx configuration
     template:
@@ -220,10 +220,73 @@ tasks:
 
 `ansible_fqdn` is a built-in Ansible fact that automatically collects the FQDN of the target system during the playbook run.
 
-## Additional Resources
+Expl;
+
+[Ansible playbook Github Repo](https://github.com/soulaimaneyahya/ansible-playbook)
+
+### Roles
+
+Ansible role is a way to organize automation tasks into reusable components
+
+`install_nginx.yaml` playbook that installs, enables, and starts NGINX using a role.
+
+#### Role Structure:
+
+```sh
+roles/
+  nginx/
+    tasks/
+      main.yml
+    meta/
+      main.yml
+```
+
+- roles/nginx/tasks/main.yml
+
+```yaml
+---
+# tasks file for nginx
+
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+  tags: nginx
+  register: nginx_register
+
+- name: Ensure Nginx is enabled and started
+  service:
+    name: nginx
+    state: started
+    enabled: true
+  register: nginx_service
+```
+
+- roles/nginx/meta/main.yml
+
+```yaml
+---
+dependencies: []
+```
+
+#### install_nginx.yaml (The Playbook):
+
+```yaml
+---
+- hosts: webservers
+  become: yes
+  roles:
+    - nginx
+```
+
+The `install_nginx.yaml` playbook uses the nginx role to install NGINX on all hosts in the webservers group.
+
+In summary, the role installs NGINX via the `apt` module (for Debian-based systems) and ensures the service is enabled and started using `systemd`.
+
+### Additional Resources
 
 - [Ansible playbook Github Repo](https://github.com/soulaimaneyahya/ansible-playbook)
 
-## Conclusion
+### Conclusion
 
 Anible is used by biggest-tech companies for its simplicity, scalability, and ease of use in DevOps and IT infrastructure management.
