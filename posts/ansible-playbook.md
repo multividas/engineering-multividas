@@ -1,13 +1,13 @@
 ---
-title: 'Ansible playbooks'
+title: 'Ansible playbook'
 date: 2024-11-15
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
-image: 'https://raw.githubusercontent.com/multividas/engineering-multividas/main/thumbnails/ansible-playbooks.jpg'
+image: 'https://raw.githubusercontent.com/multividas/engineering-multividas/main/thumbnails/ansible-playbook.jpg'
 ---
 
-In this article, we’ll explore in depth Ansible playbooks for automation
+In this article, we’ll explore in depth Ansible playbook for automation
 
 ---
 
@@ -15,7 +15,7 @@ In this article, we’ll explore in depth Ansible playbooks for automation
 
 - Ansible
 - Ansible ad-hoc commands
-- Ansible playbooks
+- Ansible playbook
 
 # Ansible
 
@@ -39,11 +39,11 @@ Ansible is used:
 
 Ansible is configuration management tool
 
-Ansible follows push model and agentless architecture
+Ansible follows push model and agentless architecture, means you don't need to install an agent on the target machines; it uses SSH (or WinRM for Windows) for communication.
 
 we can use Ansible;
 - **Ansible CLI commands** - called ad-hoc commands, done with modules
-- **Ansible Playbooks** - Written in YAML Files
+- **Ansible Playbook** - Written in YAML Files
 
 ## Ansible ad-hoc commands
 
@@ -90,9 +90,9 @@ To ping all hosts in the inventory using Ansible:
 ansible all -m ping
 ```
 
-## Ansible playbooks
+## Ansible playbook
 
-Ansible playbooks are YAML files that define a series of tasks to be executed on our fleet.
+Ansible playbook are YAML files that define a series of tasks to be executed on our fleet.
 
 ```sh
 ---
@@ -123,7 +123,7 @@ Ansible playbooks are YAML files that define a series of tasks to be executed on
 Runs the command:
 
 ```sh
-ansible-playbook ansible-playbooks/update_cache.yaml
+ansible-playbook ansible-playbook/update_cache.yaml
 ```
 
 ### Tags
@@ -200,3 +200,30 @@ Manage Service:
 - `template` copies a configuration file `(nginx.conf.j2)` to the target server.
 - Changes are detected and tracked via register: `nginx_conf_register`.
 - restart Nginx on `nginx_conf_register.changed`
+
+## Ansible Template
+
+Ansible template is used to manage configuration files by rendering them from Jinja2 templates, it's copies a file to a target machine after processing variables (e.g., from Ansible playbook or inventory).
+
+```sh
+tasks:
+  - name: Deploy Nginx configuration
+    template:
+      src: nginx.conf.j2
+      dest: /etc/nginx/nginx.conf
+      vars:
+        server_name: "{{ ansible_fqdn }}"
+        listen_port: 80
+```
+
+`nginx.conf.j2` template uses variables like **{{ ansible_fqdn }}** and **listen_port** to create a customized configuration file on each target system.
+
+`ansible_fqdn` is a built-in Ansible fact that automatically collects the FQDN of the target system during the playbook run.
+
+## Additional Resources
+
+- [Ansible playbook Github Repo](https://github.com/soulaimaneyahya/ansible-playbook)
+
+## Conclusion
+
+Anible is used by biggest-tech companies for its simplicity, scalability, and ease of use in DevOps and IT infrastructure management.
