@@ -201,6 +201,22 @@ Manage Service:
 - Changes are detected and tracked via register: `nginx_conf_register`.
 - restart Nginx on `nginx_conf_register.changed`
 
+`lineinfile` module in Ansible is used to manage specific lines in a file, such as adding, removing, or modifying a line based on a regular expression pattern, expl;
+
+```yaml
+tasks:
+  - name: Ensure the server name is set in Nginx config
+    lineinfile:
+      path: /etc/nginx/nginx.conf
+      regexp: '^server_name'
+      line: 'server_name multividas.com;'
+      state: present
+    register: nginx_conf_register
+```
+
+- The `lineinfile` module ensures that the `server_name` directive in `/etc/nginx/nginx.conf` is set to `multividas.com`.
+- If the line starting with `server_name` already exists, it will be modified; if it doesn't exist, it will be added.
+
 ### Roles
 
 Ansible role is a way to organize automation tasks into reusable components
@@ -329,6 +345,51 @@ tasks:
 `ansible_fqdn` is an automatically collected Ansible fact that retrieves the FQDN (Fully Qualified Domain Name) of the target system during the execution of the playbook.
 
 This allows for creating system-specific configurations without manually modifying each configuration file.
+
+### Most commonly used Ansible modules
+
+- **package**
+  - Manages package installation, updates, and removal.
+
+- **service**
+  - Starts, stops, and manages system services.
+
+- **user**
+  - Creates, modifies, and manages users on remote hosts.
+
+- **file**
+  - Manages file and directory permissions, ownership, and state.
+
+- **copy**
+  - Copies files and templates to remote servers.
+
+- **shell**
+  - Executes shell commands and scripts on remote servers.
+
+- **debug**
+  - Displays debugging information for tasks in playbooks.
+
+- **uri**
+  - Makes HTTP requests to web servers or APIs.
+
+- **script**
+  - Executes custom scripts on remote servers.
+
+- **command**
+  - Runs commands on remote servers (without shell processing).
+
+- **become**
+  - Elevates privileges for tasks that require higher permissions.
+
+- **apt**
+  - Manages packages on Debian-based systems (e.g., Ubuntu).
+
+- **yum**
+  - Manages packages on RHEL-based systems (e.g., CentOS, Fedora).
+
+- **firewalld**
+  - Manages firewall settings and rules on Linux systems.
+
 
 ### Additional Resources
 
