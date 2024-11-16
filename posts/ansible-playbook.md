@@ -217,6 +217,10 @@ tasks:
 - The `lineinfile` module ensures that the `server_name` directive in `/etc/nginx/nginx.conf` is set to `multividas.com`.
 - If the line starting with `server_name` already exists, it will be modified; if it doesn't exist, it will be added.
 
+::: info
+Be careful with this, there is possibility that you duplicate changes every time you run this
+:::
+
 ### Roles
 
 Ansible role is a way to organize automation tasks into reusable components
