@@ -7,7 +7,7 @@ twitter: '@soulaimaneyh'
 image: 'https://raw.githubusercontent.com/multividas/engineering-multividas/main/thumbnails/ansible-playbook.jpg'
 ---
 
-In this article, we’ll explore in depth Ansible playbook for automation
+In this article, we’ll dive deep into Ansible playbook for automation
 
 ---
 
@@ -19,9 +19,7 @@ In this article, we’ll explore in depth Ansible playbook for automation
 
 # Ansible
 
-Ansible is an open-source, cli IT automation Tool written in Python
-
-[github.com/ansible](https://github.com/ansible/ansible)
+Ansible is an open-source configuration management tool, cli IT automation Tool written in Python; [github.com/ansible](https://github.com/ansible/ansible)
 
 Ansible is used:
 - configure systems, expls;
@@ -36,8 +34,6 @@ Ansible is used:
 
 - Provisioning, expls;
   - Provisioning servers - But terraform is the best tool for it
-
-Ansible is configuration management tool
 
 Ansible follows push model and agentless architecture, means you don't need to install an agent on the target machines; it uses SSH (or WinRM for Windows) for communication.
 
@@ -67,6 +63,8 @@ ssh -i ~/.ssh/id_ansible root@host1
 
 > the same for other hosts
 
+### The configuration file
+
 `ansible.cfg` file configures default settings for Ansible.
 
 ```ini
@@ -75,6 +73,14 @@ inventory = inventory.ini
 private_key_file = ~/.ssh/id_ansible
 ```
 
+Changes can be made and used in a configuration file which will be searched for in the following order:
+
+- ANSIBLE_CONFIG (environment variable if set)
+- ansible.cfg (in the current directory)
+- ~/.ansible.cfg (in the home directory)
+- /etc/ansible/ansible.cfg
+
+Ansible will process the above list and use the first file found, all others are ignored.
 
 The Ansible Inventory File `(inventory.ini)` lists target hosts and groups for Ansible to manage. It can include hostnames, IPs, and variables like usernames, ports, and SSH keys. It organizes systems for automation tasks.
 
@@ -89,6 +95,8 @@ To ping all hosts in the inventory using Ansible:
 ```sh
 ansible all -m ping
 ```
+
+> NB: it's not just ICMP ping, it's an ssh connection to target servers
 
 ## Ansible playbook
 
@@ -229,6 +237,8 @@ Ansible role is a way to organize automation tasks into reusable components
 
 #### Role Structure:
 
+dir structure:
+
 ```sh
 roles/
   nginx/
@@ -238,39 +248,57 @@ roles/
       main.yml
 ```
 
-- roles/nginx/tasks/main.yml
+`roles/nginx/tasks/main.yml`
+
+defines the tasks for the NGINX role:
 
 ```yaml
 ---
-# tasks file for nginx
+---
+# Tasks for NGINX installation and management
 
-- name: Install Nginx
+- name: Ensure NGINX is installed
   apt:
     name: nginx
     state: present
-  tags: nginx
-  register: nginx_register
+    update_cache: yes
+  tags:
+    - nginx
+  register: nginx_install_result
 
-- name: Ensure Nginx is enabled and started
+- name: Ensure NGINX service is enabled and started
   service:
     name: nginx
     state: started
     enabled: true
-  register: nginx_service
+  tags:
+    - nginx
+  register: nginx_service_result
 ```
 
-- roles/nginx/meta/main.yml
+Key Points:
+
+- `update_cache: yes`: Ensures the apt cache is updated before attempting to install the package.
+- Registers (`nginx_install_result`, `nginx_service_result`) can be used for debugging or conditional tasks.
+
+`roles/nginx/meta/main.yml`
+
+defines metadata and dependencies for the role:
 
 ```yaml
 ---
+# Metadata for the NGINX role
 dependencies: []
 ```
 
-#### install_nginx.yaml (The Playbook):
+#### Playbook: install_nginx.yaml
+
+playbook to utilize the role and target specific hosts:
 
 ```yaml
 ---
-- hosts: webservers
+- name: Install and configure NGINX
+  hosts: webservers
   become: yes
   roles:
     - nginx
@@ -278,7 +306,15 @@ dependencies: []
 
 The `install_nginx.yaml` playbook uses the nginx role to install NGINX on all hosts in the webservers group.
 
-In summary, the role installs NGINX via the `apt` module (for Debian-based systems) and ensures the service is enabled and started using `systemd`.
+to execute the playbook, run:
+
+```sh
+ansible-playbook -i inventory install_nginx.yaml
+```
+
+In summary;
+
+- organizes tasks using roles: Makes the playbook modular and reusable.
 
 ### Host variables and Handlers
 
@@ -344,7 +380,7 @@ tasks:
         listen_port: 80
 ```
 
-`the nginx.conf.j2` template file uses variables like `{{ ansible_fqdn }}` (the fully qualified domain name of the target system) and `listen_port` (which is explicitly set to 80) to create a customized Nginx configuration on each target system.
+`the nginx.conf.j2` template file uses variables like `ansible_fqdn` (the fully qualified domain name of the target system) and `listen_port` (which is explicitly set to 80) to create a customized Nginx configuration on each target system.
 
 `ansible_fqdn` is an automatically collected Ansible fact that retrieves the FQDN (Fully Qualified Domain Name) of the target system during the execution of the playbook.
 
@@ -352,48 +388,22 @@ This allows for creating system-specific configurations without manually modifyi
 
 ### Most commonly used Ansible modules
 
-- **package**
-  - Manages package installation, updates, and removal.
-
-- **service**
-  - Starts, stops, and manages system services.
-
-- **user**
-  - Creates, modifies, and manages users on remote hosts.
-
-- **file**
-  - Manages file and directory permissions, ownership, and state.
-
-- **copy**
-  - Copies files and templates to remote servers.
-
-- **shell**
-  - Executes shell commands and scripts on remote servers.
-
-- **debug**
-  - Displays debugging information for tasks in playbooks.
-
-- **uri**
-  - Makes HTTP requests to web servers or APIs.
-
-- **script**
-  - Executes custom scripts on remote servers.
-
-- **command**
-  - Runs commands on remote servers (without shell processing).
-
-- **become**
-  - Elevates privileges for tasks that require higher permissions.
-
-- **apt**
-  - Manages packages on Debian-based systems (e.g., Ubuntu).
-
-- **yum**
-  - Manages packages on RHEL-based systems (e.g., CentOS, Fedora).
-
-- **firewalld**
-  - Manages firewall settings and rules on Linux systems.
-
+| **Module**   | **Description**                                                      |
+|--------------|----------------------------------------------------------------------|
+| **package**  | Manages package installation, updates, and removal.                 |
+| **service**  | Starts, stops, and manages system services.                         |
+| **user**     | Creates, modifies, and manages users on remote hosts.               |
+| **file**     | Manages file and directory permissions, ownership, and state.       |
+| **copy**     | Copies files and templates to remote servers.                       |
+| **shell**    | Executes shell commands and scripts on remote servers.              |
+| **debug**    | Displays debugging information for tasks in playbooks.              |
+| **uri**      | Makes HTTP requests to web servers or APIs.                         |
+| **script**   | Executes custom scripts on remote servers.                          |
+| **command**  | Runs commands on remote servers (without shell processing).         |
+| **become**   | Elevates privileges for tasks that require higher permissions.      |
+| **apt**      | Manages packages on Debian-based systems (e.g., Ubuntu).            |
+| **yum**      | Manages packages on RHEL-based systems (e.g., CentOS, Fedora).      |
+| **firewalld**| Manages firewall settings and rules on Linux systems.               |
 
 ### Additional Resources
 

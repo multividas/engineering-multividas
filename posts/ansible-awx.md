@@ -13,9 +13,25 @@ In this article, we’ll dive deep into automating software deployment with Ansi
 
 ### Table Of Contents
 
-- Ansible
-- Ansible AWX
+- Ansible & AWX
 
-# Ansible
+# Ansible & AWX
 
-# Ansible AWX
+**Ansible AWX** is an open-source web-based UI, API, and management tool for Ansible. It serves as the upstream project for Ansible Tower, which is the enterprise version.
+
+**AWX** provides a centralized platform to manage Ansible playbooks, inventories, and workflows, enabling users to execute automation tasks, monitor job progress, and manage credentials securely.
+
+Key features include:
+
+- Web UI and API for managing Ansible.
+- Role-based access control (RBAC).
+- Scheduling automation tasks.
+- Real-time job status and logs.
+- Integration with external credential stores and SCM (e.g., Git).
+
+It is ideal for teams looking for a collaborative and scalable way to leverage Ansible.
+
+### Additional Resources
+
+- [Ansible playbook](https://engineering.multividas.com/posts/ansible-playbook)
+- [GCP Ansible Tower](https://console.cloud.google.com/marketplace/details/techlatest-public/ansible-cloud-ide)
