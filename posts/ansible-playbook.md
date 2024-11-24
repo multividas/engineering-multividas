@@ -16,6 +16,7 @@ In this article, we’ll dive deep into Ansible playbook for automation
 - Ansible
 - Ansible ad-hoc commands
 - Ansible playbook
+- Ansible Vault
 
 # Ansible
 
@@ -27,10 +28,10 @@ Ansible is used:
   - open some port on all db servers
 
 - deploy softwares, expls;
-  - Install nc command on all servers
+  - Install nc command on all serverss
   - install webserver
 
-- Update systems / apply patches
+- Update systems / apply patchestate
 
 - Provisioning, expls;
   - Provisioning servers - But terraform is the best tool for it
@@ -225,6 +226,17 @@ tasks:
 - The `lineinfile` module ensures that the `server_name` directive in `/etc/nginx/nginx.conf` is set to `multividas.com`.
 - If the line starting with `server_name` already exists, it will be modified; if it doesn't exist, it will be added.
 
+#### State Summary:
+
+- `present`: Ensures the resource is installed or exists.
+- `absent`: Ensures the resource is removed.
+- `latest`: Ensures the resource is the latest version available.
+- `stopped`: Ensures the service is stopped.
+- `started`: Ensures the service is started.
+- `reloaded`: Ensures the service is reloaded (typically to apply configuration changes).
+- `directory`: Ensures a directory exists.
+- `file`: Ensures a file exists.
+
 ::: info
 Be careful with this, there is possibility that you duplicate changes every time you run this
 :::
@@ -405,9 +417,63 @@ This allows for creating system-specific configurations without manually modifyi
 | **yum**      | Manages packages on RHEL-based systems (e.g., CentOS, Fedora).      |
 | **firewalld**| Manages firewall settings and rules on Linux systems.               |
 
+## Ansible Vault
+
+1. Encrypt a Template File
+
+Encrypt the `.env.j2` file using Ansible Vault:
+
+```sh
+ansible-vault encrypt templates/.env.j2
+```
+
+This will prompt you for a password to encrypt the file.
+2. Decrypt a Template File
+
+Decrypt the `.env.j2` file when needed:
+
+```sh
+ansible-vault decrypt templates/.env.j2
+```
+
+3. View an Encrypted Template File
+
+If you only want to view the contents of the encrypted file without decrypting it:
+
+```sh
+ansible-vault view templates/.env.j2
+```
+
+4. Using the Encrypted Template in a Playbook
+
+```sh
+- name: Deploy environment file
+  template:
+    src: templates/.env.j2
+    dest: /project/.env
+```
+
+Ensure you pass the Vault password when running the playbook.
+
+5. Run Playbook with Vault Password
+
+Provide the Vault password using `--ask-vault-pass`:
+
+```sh
+ansible-playbook playbook.yml --ask-vault-pass
+```
+
+Alternatively, use a password file for automation:
+
+```sh
+ansible-playbook playbook.yml --vault-password-file /templates/.env.j2
+```
+
+> NB: Do not push `.env.j2` prod conf file on GitHub (even encrypted using Ansible Vault)
+
 ### Additional Resources
 
-- [Ansible playbook Github Repo](https://github.com/soulaimaneyahya/ansible-playbook)
+- [Ansible playbook GitHub Repo](https://github.com/soulaimaneyahya/ansible-playbook)
 
 ### Conclusion
 
