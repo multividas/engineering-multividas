@@ -1,5 +1,5 @@
 ---
-title: 'PHP Clean Code Best Practices'
+title: 'PHP Clean Code'
 date: 2024-02-06
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
@@ -11,7 +11,7 @@ In this article, we'll explore best practices for writing clean PHP code, aiming
 
 ---
 
-# PHP Clean Code Best Practices
+# PHP Clean Code
 
 Writing clean code is an essential part of software development that helps to improve maintainability, readability, and overall quality of the code. PHP, being one of the most popular programming languages, has a lot of features and tools that can help developers write clean code.
 
