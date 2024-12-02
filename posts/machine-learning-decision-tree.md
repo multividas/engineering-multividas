@@ -179,7 +179,6 @@ You will see that the Decision Tree gives you different results if you run it en
 That is because the Decision Tree does not give us a 100% certain answer. It is based on the probability of an outcome, and the answer will vary.
 :::
 
-
 ## Github Repo
 
 - [Machine Learning - Decision Tree](https://github.com/soulaimaneyahya/ml-decision-tree)
