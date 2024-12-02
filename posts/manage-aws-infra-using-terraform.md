@@ -1,6 +1,6 @@
 ---
 title: 'Manage AWS Infrastructure using Terraform'
-date: 2024-11-15
+date: 2024-01-01
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
@@ -24,7 +24,7 @@ blueprint can execute and automate everything you do in the cloud, it's free, op
 Expl `aws.tf` that explains how to manage **EC2 instances**, **S3 buckets**, and **VPC** using **Terraform**.
 
 ## Provider Configuration (aws)
-- https://registry.terraform.io/providers/hashicorp/aws/latest
+- [terraform/aws](https://registry.terraform.io/providers/hashicorp/aws/latest)
 
 ```yaml
 # aws.tf
@@ -201,6 +201,37 @@ terraform apply -target=aws_instance.web_server
 
 ```bash
 terraform destroy
+```
+
+## Run Terraform with a variable file
+
+Define your variables in a file with a `.tfvars` extension (e.g., variables.tfvars).
+
+```sh
+instance_type = "t2.micro"
+region        = "us-west-2"
+```
+
+```sh
+resource "aws_instance" "x3" {
+  ami           = "ami-x3"
+  instance_type = var.instance_type
+}
+
+provider "aws" {
+  region = var.region
+}
+```
+
+run:
+```bash
+terraform init
+terraform apply -var-file="variables.tfvars"
+```
+
+To use multiple files, specify each one in the command:
+```sh
+terraform apply -var-file="variables1.tfvars" -var-file="variables2.tfvars"
 ```
 
 ### Additional Resources

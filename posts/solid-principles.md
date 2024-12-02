@@ -72,7 +72,6 @@ public class EmailService {
 ## Open-Closed Principle (OCP)
 The Open-Closed Principle (OCP) states that software entities should be open for extension but closed for modification. This principle promotes code reusability and maintainability. Let's consider an example where we want to add new shapes to an existing drawing application. The DrawingApplication class is open for extension, as we can easily add new shapes by implementing the Shape interface. However, it is closed for modification, as adding new shapes does not require changing the existing code. This allows us to introduce new shapes without impacting the core functionality of the application.
 
-
 ```java
 public interface Shape {
     void draw();
@@ -203,7 +202,6 @@ public class Square extends Rectangle {
 }
 ```
 In this refactored code, we introduce a constructor in the Rectangle class to set the width and height initially. The Square class then extends the Rectangle class and uses the setSideLength() method to update both the width and height simultaneously. This ensures that the behavior of the inherited methods is maintained, and objects of the Square class can be used interchangeably with objects of the Rectangle class without affecting the correctness of the program.
-
 
 ## Interface Segregation Principle (ISP)
 

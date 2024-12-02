@@ -17,6 +17,7 @@ In this article, we’ll dive deep into Ansible playbook for automation
 - Ansible ad-hoc commands
 - Ansible playbook
 - Ansible Vault
+- Ansible Galaxy
 
 # Ansible
 
