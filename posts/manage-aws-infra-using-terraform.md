@@ -1,6 +1,6 @@
 ---
 title: 'Manage AWS Infrastructure using Terraform'
-date: 2024-01-01
+date: 2024-12-01
 author: Soulaimane Yahya
 gravatar: b07a2846505a2629b7123ad50d5e21c303cf7c562a8893473c2114f7491c7796
 twitter: '@soulaimaneyh'
