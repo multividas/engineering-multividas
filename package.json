@@ -1,7 +1,7 @@
 {
   "name": "engineering-multividas.com",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "With engineering.multividas.com, you can write and publish technical articles.",
   "keywords": [
@@ -16,19 +16,30 @@
     {
       "name": "ChaimaeChr",
       "url": "https://github.com/CXaymae"
+    },
+    {
+      "name": "Tajeddine Bourhim",
+      "url": "https://github.com/scorpiontaj"
     }
   ],
   "scripts": {
     "dev": "vitepress --open",
     "build": "vitepress build",
-    "serve": "vitepress serve"
+    "serve": "vitepress serve",
+    "fetch-api": "node fetchApi.js",
+    "generate-sitemap": "node generateSitemap.js",
+    "pnpm": "pnpm install",
+    "start": "vitepress serve"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^13.0.7",
-    "@types/node": "^20.11.16",
+    "@types/node": "^22.10.5",
+    "axios": "^1.4.0",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "sitemap": "^7.0.0",
     "tailwindcss": "^3.4.1",
     "vitepress": "^1.0.0-rc.41",
     "vue": "^3.4.15"
@@ -47,7 +58,10 @@
     "url": "git+https://github.com/multividas/engineering-multividas.git"
   },
   "engines": {
-    "nvm": "20",
-    "node": "^20"
+    "nvm": "22",
+    "node": "^22.13.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }

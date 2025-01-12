@@ -2,9 +2,9 @@ name: Multividas Engineering blog
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
   workflow_dispatch:
 
@@ -19,13 +19,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build static
-        run : |
+        run: |
           npm run build
           touch .vitepress/dist/.nojekyll
           touch .vitepress/dist/favicon.ico
