@@ -1,15 +1,16 @@
 import path from 'path'
 import { Feed } from 'feed'
-import { createContentLoader, type SiteConfig } from 'vitepress'
 import fsExtra from 'fs-extra'
+import { createContentLoader, type SiteConfig } from 'vitepress'
+
 const baseUrl = `https://engineering.multividas.com`
 
 const { ensureDirSync, writeFileSync } = fsExtra
+
 export async function genFeed(config: SiteConfig) {
   const feed = new Feed({
     title: 'Multividas Engineering blog',
-    description:
-      'Creative engineers and developers building a world where you can belong anywhere, Multividas Engineering blog is a technical news resource for engineers interested in how we solve large-scale technical challenges at Multividas.',
+    description: 'Creative engineers and developers building a world where you can belong anywhere, Multividas Engineering blog is a technical news resource for engineers interested in how we solve large-scale technical challenges at Multividas.',
     id: baseUrl,
     link: baseUrl,
     language: 'en',
@@ -24,9 +25,7 @@ export async function genFeed(config: SiteConfig) {
   }).load()
 
   posts.sort(
-    (a, b) =>
-      +new Date(b.frontmatter.date as string) -
-      +new Date(a.frontmatter.date as string)
+    (a, b) => +new Date(b.frontmatter.date as string) - +new Date(a.frontmatter.date as string)
   )
 
   for (const { url, excerpt, frontmatter, html } of posts) {
@@ -39,9 +38,7 @@ export async function genFeed(config: SiteConfig) {
       author: [
         {
           name: frontmatter.author,
-          link: frontmatter.twitter
-            ? `https://twitter.com/${frontmatter.twitter}`
-            : undefined
+          link: frontmatter.twitter ? `https://twitter.com/${frontmatter.twitter}` : undefined
         }
       ],
       date: new Date(frontmatter.date),
