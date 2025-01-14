@@ -16,7 +16,7 @@ const { page, frontmatter } = useData()
             class="inline-block mr-2"
             style="width: 36px; height: 31px"
             alt="logo"
-            src="/logo-multividas-blogging-platform-multividas-social-media-blog-multividas-posts-threads-multividas-comments-discussions-multividas-short-texts-multividas-social-blogging.svg"
+            src="/xlogo/logo-multividas-blogging-platform-multividas-social-media-blog-multividas-posts-threads-multividas-comments-discussions-multividas-short-texts-multividas-social-blogging.svg"
           />
           <span
             v-if="!frontmatter.index"
