@@ -4,8 +4,7 @@ import { genFeed } from './genFeed.js'
 export default defineConfig({
   lang: 'en-US',
   title: 'Multividas Engineering blog',
-  description:
-    'Creative engineers and developers building a world where you can belong anywhere, Multividas Engineering blog is a technical news resource for engineers interested in how we solve large-scale technical challenges at Multividas.',
+  description: 'Creative engineers and developers building a world where you can belong anywhere, Multividas Engineering blog is a technical news resource for engineers interested in how we solve large-scale technical challenges at Multividas.',
   lastUpdated: true,
   cleanUrls: true,
   head: [
@@ -18,16 +17,14 @@ export default defineConfig({
       'meta',
       {
         property: 'og:description',
-        content:
-          'With engineering.multividas.com, you can write and publish technical articles.'
+        content: 'With engineering.multividas.com, you can write and publish technical articles.'
       }
     ],
     [
       'meta',
       {
         property: 'og:image',
-        content:
-          'logo-multividas-blogging-platform-multividas-social-media-blog-multividas-posts-threads-multividas-comments-discussions-multividas-short-texts-multividas-social-blogging.svg'
+        content: 'xlogo/logo-multividas-blogging-platform-multividas-social-media-blog-multividas-posts-threads-multividas-comments-discussions-multividas-short-texts-multividas-social-blogging.svg'
       }
     ],
     ['meta', { property: 'og:url', content: 'engineering.multividas.com' }],
@@ -49,8 +46,7 @@ export default defineConfig({
       'meta',
       {
         property: 'multividas:description',
-        description:
-          'With engineering.multividas.com, you can write and publish technical articles.'
+        description: 'With engineering.multividas.com, you can write and publish technical articles.'
       }
     ],
     [
