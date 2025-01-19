@@ -22,14 +22,21 @@ In this article, we’ll take a deep dive into design pattern, exploring its typ
 **Creation Design Pattern** focuses on the process of object creation, ensuring that objects are created in a manner suitable to our project requirements. It helps abstract the instantiation logic from the client code.
 
 - **Singleton:** Ensures a class has only one instance and provides a global point of access to it.
+[singleton-design-pattern](https://engineering.multividas.com/posts/singleton-design-pattern)
 
 # Structural design pattern
 
 **Structural Design Patterns** focus on how objects and classes are arranged or composed.
 
 - **Adapter:** Converts one interface into another expected by clients, enabling incompatible interfaces to work together.
+[adapter-design-pattern](https://engineering.multividas.com/posts/adapter-design-pattern)
+
 - **Bridge:** Separates an abstraction from its implementation, allowing both to vary independently.
+[bridge-design-pattern](https://engineering.multividas.com/posts/bridge-design-pattern)
+
 - **Facade:** Provides a unified interface to a set of interfaces in a subsystem, making it easier to use and interact with.
+[facade-design-pattern](https://engineering.multividas.com/posts/facade-design-pattern)
+
 
 # Behavioral design pattern
 

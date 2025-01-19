@@ -21,7 +21,7 @@ In this article, we’ll take a deep dive into Singleton design pattern, explori
 
 # Singleton design pattern
 
-The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance. It's useful when you need a single, shared resource across the application, such as a configuration manager or a database connection.
+The **Singleton** is a creational design pattern ensures that a class has only one instance and provides a global point of access to that instance. It's useful when you need a single, shared resource across the application, such as a configuration manager or a database connection.
 
 <img src="https://refactoring.guru/images/patterns/diagrams/singleton/structure-en.png" alt="singleton-design-pattern" />
 
