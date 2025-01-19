@@ -20,7 +20,7 @@ In this article, we’ll take a deep dive into Facade design pattern, exploring 
 
 # Facade design pattern
 
-**Facade Design Pattern** provides a simplified, `unified interface` to a complex system or set of subsystems. It hides the complexity of the system by exposing only essential methods, making it easier for clients to interact with the system.
+The **Facade** is a structural design pattern provides a simplified, `unified interface` to a complex system or set of subsystems. It hides the complexity of the system by exposing only essential methods, making it easier for clients to interact with the system.
 
 Key features:
 
