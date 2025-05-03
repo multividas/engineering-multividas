@@ -150,6 +150,13 @@ class PostsController
 
 **Encapsulation:** The facade hides the logic of how the `ApiRepositoryInterface` is resolved, providing a layer of abstraction.
 
+Facade design pattern When:
+
+- You hide complex internals (multiple services under one method); filterData, sortdata, cachedata, paginateData ...
+- You simplify API for external usage (clean, consistent calls), so external code doesn't deal with low-level setup, configs, or multiple classes — - just one clean call.
+- You encapsulate subsystems without changing original classes.
+- You want static-like access to bound services (Laravel style), expl; `QueryFilters::applyFilters()`
+
 ### Conclusion:
 
 - **Subsystem:** `ApiRepository` and `ApiRepositoryInterface` does the actual work (structuring and generating API responses).
